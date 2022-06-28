@@ -23,7 +23,7 @@ public class PartnerController {
     @Autowired
     PartnerService service;
 
-    @GetMapping(value = ApiPath.NEWS_GET_ALL)
+    @GetMapping(value = ApiPath.PARTNER_GET_ALL)
     public ResponseEntity<PartnerResponseDTO> getAll() {
         PartnerResponseDTO response = new PartnerResponseDTO();
         try {
@@ -40,7 +40,7 @@ public class PartnerController {
         }
     }
 
-    @GetMapping(value = ApiPath.NEWS_GET_BY_UUID)
+    @GetMapping(value = ApiPath.PARTNER_GET_BY_UUID)
     public ResponseEntity<PartnerResponseDTO> getByUUid(@RequestBody PartnerDTO request) {
         PartnerResponseDTO response = new PartnerResponseDTO();
         try {
@@ -61,7 +61,7 @@ public class PartnerController {
         }
     }
 
-    @PostMapping(value = ApiPath.NEWS_CREATE)
+    @PostMapping(value = ApiPath.PARTNER_CREATE)
     public ResponseEntity<PartnerResponseDTO> create(@RequestBody PartnerDTO request) {
         PartnerResponseDTO response = new PartnerResponseDTO();
         try {
@@ -85,7 +85,7 @@ public class PartnerController {
         }
     }
 
-    @PostMapping(value = ApiPath.NEWS_UPDATE)
+    @PostMapping(value = ApiPath.PARTNER_UPDATE)
     public ResponseEntity<PartnerResponseDTO> update(@RequestBody PartnerDTO request) {
         PartnerResponseDTO response = new PartnerResponseDTO();
         try {
@@ -109,7 +109,7 @@ public class PartnerController {
         }
     }
 
-    @PostMapping(value = ApiPath.NEWS_DELETE)
+    @PostMapping(value = ApiPath.PARTNER_DELETE)
     public ResponseEntity<PartnerResponseDTO> delete(@RequestBody PartnerDTO request) {
         PartnerResponseDTO response = new PartnerResponseDTO();
         try {

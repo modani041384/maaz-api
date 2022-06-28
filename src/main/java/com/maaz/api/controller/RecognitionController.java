@@ -23,7 +23,7 @@ public class RecognitionController {
     @Autowired
     RecognitionService service;
 
-    @GetMapping(value = ApiPath.NEWS_GET_ALL)
+    @GetMapping(value = ApiPath.RECOGNITION_GET_ALL)
     public ResponseEntity<RecognitionResponseDTO> getAll() {
         RecognitionResponseDTO response = new RecognitionResponseDTO();
         try {
@@ -40,7 +40,7 @@ public class RecognitionController {
         }
     }
 
-    @GetMapping(value = ApiPath.NEWS_GET_BY_UUID)
+    @GetMapping(value = ApiPath.RECOGNITION_GET_BY_UUID)
     public ResponseEntity<RecognitionResponseDTO> getByUUid(@RequestBody RecognitionDTO request) {
         RecognitionResponseDTO response = new RecognitionResponseDTO();
         try {
@@ -61,7 +61,7 @@ public class RecognitionController {
         }
     }
 
-    @PostMapping(value = ApiPath.NEWS_CREATE)
+    @PostMapping(value = ApiPath.RECOGNITION_CREATE)
     public ResponseEntity<RecognitionResponseDTO> create(@RequestBody RecognitionDTO request) {
         RecognitionResponseDTO response = new RecognitionResponseDTO();
         try {
@@ -85,7 +85,7 @@ public class RecognitionController {
         }
     }
 
-    @PostMapping(value = ApiPath.NEWS_UPDATE)
+    @PostMapping(value = ApiPath.RECOGNITION_UPDATE)
     public ResponseEntity<RecognitionResponseDTO> update(@RequestBody RecognitionDTO request) {
         RecognitionResponseDTO response = new RecognitionResponseDTO();
         try {
@@ -109,7 +109,7 @@ public class RecognitionController {
         }
     }
 
-    @PostMapping(value = ApiPath.NEWS_DELETE)
+    @PostMapping(value = ApiPath.RECOGNITION_DELETE)
     public ResponseEntity<RecognitionResponseDTO> delete(@RequestBody RecognitionDTO request) {
         RecognitionResponseDTO response = new RecognitionResponseDTO();
         try {
