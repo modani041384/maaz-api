@@ -32,12 +32,11 @@ public class ProductsController {
             response.setList(list);
             response.setMessage("Success when get all products");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get all products:", ex);
             response.setMessage("Error when get all products: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -53,12 +52,12 @@ public class ProductsController {
             response.setData(products);
             response.setMessage("Success when get product by id");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
+
         } catch (Exception ex) {
             log.error("Error when get product by id:", ex);
             response.setMessage("Error when get product by id: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -77,12 +76,11 @@ public class ProductsController {
             }
             response.setMessage("Success when create product");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when create product:", ex);
             response.setMessage("Error when create product: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -101,12 +99,11 @@ public class ProductsController {
             }
             response.setMessage("Success when update product");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when update product:", ex);
             response.setMessage("Error when update product: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -129,12 +126,11 @@ public class ProductsController {
             }
             response.setMessage("Success when delete product");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when delete product:", ex);
             response.setMessage("Error when delete product: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 

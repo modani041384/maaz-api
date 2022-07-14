@@ -31,12 +31,11 @@ public class RecognitionController {
             response.setList(list);
             response.setMessage("Success when get all recognition");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get all recognition:", ex);
             response.setMessage("Error when get all recognition: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -52,12 +51,11 @@ public class RecognitionController {
             response.setData(resources);
             response.setMessage("Success when get recognition by id");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get recognition by id:", ex);
             response.setMessage("Error when get recognition by id: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -76,12 +74,11 @@ public class RecognitionController {
             }
             response.setMessage("Success when create recognition");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when create recognition:", ex);
             response.setMessage("Error when create recognition:" + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -100,12 +97,11 @@ public class RecognitionController {
             }
             response.setMessage("Success when update recognition");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when update recognition:", ex);
             response.setMessage("Error when update recognition:" + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -128,12 +124,11 @@ public class RecognitionController {
             }
             response.setMessage("Success when delete recognition");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when delete recognition:", ex);
             response.setMessage("Error when delete recognition: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 

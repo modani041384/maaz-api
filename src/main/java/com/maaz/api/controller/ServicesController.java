@@ -32,12 +32,11 @@ public class ServicesController {
             response.setList(list);
             response.setMessage("Success when get all services");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get all services:", ex);
             response.setMessage("Error when get all services: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -53,12 +52,11 @@ public class ServicesController {
             response.setData(services);
             response.setMessage("Success when get services by id");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get services by id:", ex);
             response.setMessage("Error when get services by id: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -77,12 +75,11 @@ public class ServicesController {
             }
             response.setMessage("Success when create services");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when create services:", ex);
             response.setMessage("Error when create services: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -101,12 +98,11 @@ public class ServicesController {
             }
             response.setMessage("Success when update services");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when update services:", ex);
             response.setMessage("Error when update services: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -129,12 +125,11 @@ public class ServicesController {
             }
             response.setMessage("Success when delete services");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when delete services:", ex);
             response.setMessage("Error when delete services: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 

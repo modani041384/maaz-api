@@ -31,12 +31,11 @@ public class NewsController {
             response.setList(list);
             response.setMessage("Success when get all news");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get all news:", ex);
             response.setMessage("Error when get all news: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -52,12 +51,11 @@ public class NewsController {
             response.setData(resources);
             response.setMessage("Success when get news by id");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get news by id:", ex);
             response.setMessage("Error when get news by id: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -76,12 +74,11 @@ public class NewsController {
             }
             response.setMessage("Success when create news");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when create news:", ex);
             response.setMessage("Error when create news: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -100,12 +97,11 @@ public class NewsController {
             }
             response.setMessage("Success when update news");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when update news:", ex);
             response.setMessage("Error when update news: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -128,12 +124,11 @@ public class NewsController {
             }
             response.setMessage("Success when delete news");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when delete news:", ex);
             response.setMessage("Error when delete news: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 

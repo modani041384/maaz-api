@@ -31,12 +31,11 @@ public class PartnerController {
             response.setList(list);
             response.setMessage("Success when get all partner");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get all partner:", ex);
             response.setMessage("Error when get all partner: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -52,12 +51,11 @@ public class PartnerController {
             response.setData(resources);
             response.setMessage("Success when get partner by id");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get partner by id:", ex);
             response.setMessage("Error when get partner by id: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -76,12 +74,11 @@ public class PartnerController {
             }
             response.setMessage("Success when create partner");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when create partner:", ex);
             response.setMessage("Error when create partner: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -100,12 +97,11 @@ public class PartnerController {
             }
             response.setMessage("Success when update partner");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when update partner:", ex);
             response.setMessage("Error when update partner: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -128,12 +124,11 @@ public class PartnerController {
             }
             response.setMessage("Success when delete partner");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when delete partner:", ex);
             response.setMessage("Error when delete partner: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 

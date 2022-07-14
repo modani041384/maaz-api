@@ -44,7 +44,7 @@ public class CompanyController {
     public ResponseEntity<CompanyResponseDTO> getByUUid(@RequestBody CompanyDTO request) {
         CompanyResponseDTO response = new CompanyResponseDTO();
         try {
-            if (null == request) {
+            if (null == request || request.getId() == null) {
                 response.setMessage("Input body");
                 return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
             }
@@ -52,12 +52,11 @@ public class CompanyController {
             response.setData(services);
             response.setMessage("Success when get company by id");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when get company by id:", ex);
             response.setMessage("Error when get company by id: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -76,12 +75,11 @@ public class CompanyController {
             }
             response.setMessage("Success when create company");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when create company:", ex);
             response.setMessage("Error when create company: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -100,12 +98,11 @@ public class CompanyController {
             }
             response.setMessage("Success when update company");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when update company:", ex);
             response.setMessage("Error when update company: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
@@ -128,12 +125,11 @@ public class CompanyController {
             }
             response.setMessage("Success when delete company");
             response.setErrorCode(ErrorCode.SUCCESS);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (Exception ex) {
             log.error("Error when delete company:", ex);
             response.setMessage("Error when delete company: " + ex.getMessage());
             return new ResponseEntity(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        } finally {
-            return new ResponseEntity(response, HttpStatus.OK);
         }
     }
 
